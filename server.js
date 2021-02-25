@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 const app = express()
 
 const arrDciModules = [
@@ -10,6 +11,8 @@ const arrDciModules = [
     'Fullstack', 
     'Final Project'
 ]
+
+app.use( cors() ) // MIDDLEWARE => grant access to my API from outside
 
 app.get("/", (req, res) => {
     res.send(`<h1>View DCI modules as...</h1> 
@@ -35,8 +38,8 @@ app.get("/html", (req, res) => {
 })
 
 
-let port = 5000
-app.listen(port, () => { 
-    console.log("Server started on port: " + port)
+let PORT = 5000
+app.listen(PORT, () => { 
+    console.log(`Server started on port: ${PORT}`)
 })
 
