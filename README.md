@@ -46,12 +46,21 @@ Adapt the HTML output in route /html:
 * Create a react-app in a subfolder "client"
     - `npx create-react-app client`
 
+* Make your API reachable for your React app
+	* Move inside the terminal to the folder with your API code
+	* Install the package "cors" (`npm i cors`)
+	* Add this line to your backend file: 
+        * `app.use( cors() ) `
+        * (add it right after the line `const app = express() `)
+	* => this will now make the API reachable from the browser
+
 * Start the API and React in parallel
     * Start the API in the terminal using nodemon (if not running already)
     * Open a second terminal in VsCode (with the + Icon)
     * Change into the folder "client" and run "npm start" to start React
 
 * In App.js - fetch the course modules from your API and display them
+    * please fetch the "naked" JavaScript data from your /json route
     * either fetch them on a button click or in a useEffect hook on load
 
 DONE!
